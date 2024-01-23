@@ -15,17 +15,17 @@ public class EntitySepatuSpesifik extends EntitySepatuGeneral {
 
     @Override
     public String infoLokasi() {
-        return "Sepatu Tersebut Berada Di Rak no - " + lokasi;
+        return "\nSepatu Tersebut Berada Di Rak no - " + lokasi;
     }
-    public void cetakInfo() {
-        System.out.println("Merk \t: " + merk);
-        System.out.println("Jenis \t: " + jenis);
-        System.out.println("Tipe \t: " + type);
-        System.out.println("Warna \t: " + warna);
-        System.out.println("Ukuran \t: " + ukuran);
-        System.out.println("Stok \t: " + stok);
-        System.out.println(infoLokasi());
-        System.out.println("---------------------");
+    public String cetakInfo() {
+        return
+        "Merk \t: " + merk +
+        "\nJenis \t: " + jenis +
+        "\nTipe \t: " + type +
+        "\nWarna \t: " + warna +
+        "\nUkuran \t: " + ukuran +
+        "\nStok \t: " + stok +
+        infoLokasi();
     }
 
     public String getType() {

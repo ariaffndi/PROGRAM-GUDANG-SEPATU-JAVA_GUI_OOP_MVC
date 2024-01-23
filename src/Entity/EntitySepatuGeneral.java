@@ -11,7 +11,7 @@ public abstract class EntitySepatuGeneral {
     public String infoLokasi() {
         return "Sepatu tersebut berada di Rak no - 0";
     };
-    public abstract void cetakInfo();
+    public abstract String cetakInfo();
 
     public String getJenis() {
         return jenis;

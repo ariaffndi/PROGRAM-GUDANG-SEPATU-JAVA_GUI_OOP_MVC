@@ -73,14 +73,8 @@ public class ViewTampilSemuaData extends JFrame{
             JTextArea areaData = new JTextArea();
             areaData.setEditable(false);
 
-            areaData.append("Merk \t: " + data.getMerk() + "\n");
-            areaData.append("Jenis \t: " + data.getJenis() + "\n");
-            areaData.append("Tipe \t: " + data.getType() + "\n");
-            areaData.append("Warna \t: " + data.getWarna() + "\n");
-            areaData.append("Ukuran \t: " + data.getUkuran() + "\n");
-            areaData.append("Stok \t: " + data.getStok() + "\n");
-            areaData.append(data.infoLokasi());
-            areaData.append("\n--------------------------------------------------------------------------------------\n");
+            areaData.append(data.cetakInfo());
+            areaData.append("\n--------------------------------------------------------------------------------\n");
 
             panelData.add(areaData);
         }

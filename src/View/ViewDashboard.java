@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 
 public class ViewDashboard extends JFrame{
 
-    JLabel labelFoto, judul, subJudul, ketMenuTambah, ketMenuTampil, ketMenuUpdateInfo, ketMenuUpdateStok, ketMenuHapus, ketMenuCariByTipe, ketMenuCariByMerk, ketMenuQuit;
-    JButton menuTambah, menuTampil, menuUpdateInfo, menuUpdateStok, menuHapus, menuCariByTipe, menuCariByMerk, menuQuit;
+    JLabel labelFoto, judul, subJudul, ketMenuTambah, ketMenuTampilkanData, ketMenuUpdateInfo, ketMenuUpdateStok, ketMenuHapus, ketMenuCariByTipe, ketMenuCariByMerk, ketMenuQuit;
+    JButton menuTambah, menuTampilkanData, menuUpdateInfo, menuUpdateStok, menuHapus, menuCariByTipe, menuCariByMerk, menuQuit;
 
     Font font;
 
@@ -24,7 +24,7 @@ public class ViewDashboard extends JFrame{
 
     private void elements() {
         menuTambah();
-        menuTampil();
+        menuTampilkanData();
         menuUpdateInfo();
         menuUpdateStok();
         menuHapus();
@@ -72,31 +72,31 @@ public class ViewDashboard extends JFrame{
         icon = new ImageIcon(image);
         menuTambah.setIcon(icon);
         menuTambah.setContentAreaFilled(false);
-        menuTambah.addActionListener(e -> actionMenu1());
+        menuTambah.addActionListener(e -> actionTambah());
 
         add(menuTambah);
         add(ketMenuTambah);
     }
 
-    private void menuTampil() {
-        ketMenuTampil = new JLabel("Tampilkan Semua Data");
+    private void menuTampilkanData() {
+        ketMenuTampilkanData = new JLabel("Tampilkan Semua Data");
         font = new Font("calibri", Font.BOLD, 18);
-        ketMenuTampil.setFont(font);
-        ketMenuTampil.setBounds(315,275,200,50);
+        ketMenuTampilkanData.setFont(font);
+        ketMenuTampilkanData.setBounds(315,275,200,50);
         Color color = new Color(150, 50, 50);
-        ketMenuTampil.setForeground(color);
+        ketMenuTampilkanData.setForeground(color);
 
-        menuTampil = new JButton();
-        menuTampil.setBounds(345, 180, 100,100 );
+        menuTampilkanData = new JButton();
+        menuTampilkanData.setBounds(345, 180, 100,100 );
         ImageIcon icon = new ImageIcon("img/read.png");
         Image image = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         icon = new ImageIcon(image);
-        menuTampil.setIcon(icon);
-        menuTampil.setContentAreaFilled(false);
-        menuTampil.addActionListener(e -> actionMenu2());
+        menuTampilkanData.setIcon(icon);
+        menuTampilkanData.setContentAreaFilled(false);
+        menuTampilkanData.addActionListener(e -> actionTampilkanData());
 
-        add(menuTampil);
-        add(ketMenuTampil);
+        add(menuTampilkanData);
+        add(ketMenuTampilkanData);
     }
 
     private void menuUpdateInfo() {
@@ -114,7 +114,7 @@ public class ViewDashboard extends JFrame{
         icon = new ImageIcon(image);
         menuUpdateInfo.setIcon(icon);
         menuUpdateInfo.setContentAreaFilled(false);
-        menuUpdateInfo.addActionListener(e -> actionMenu3());
+        menuUpdateInfo.addActionListener(e -> actionUpdateInfo());
 
         add(menuUpdateInfo);
         add(ketMenuUpdateInfo);
@@ -135,7 +135,7 @@ public class ViewDashboard extends JFrame{
         icon = new ImageIcon(image);
         menuUpdateStok.setIcon(icon);
         menuUpdateStok.setContentAreaFilled(false);
-        menuUpdateStok.addActionListener(e -> actionMenu4());
+        menuUpdateStok.addActionListener(e -> actionUpdateStok());
 
         add(menuUpdateStok);
         add(ketMenuUpdateStok);
@@ -156,7 +156,7 @@ public class ViewDashboard extends JFrame{
         icon = new ImageIcon(image);
         menuHapus.setIcon(icon);
         menuHapus.setContentAreaFilled(false);
-        menuHapus.addActionListener(e -> actionMenu5());
+        menuHapus.addActionListener(e -> actionHapus());
 
         add(menuHapus);
         add(ketMenuHapus);
@@ -177,7 +177,7 @@ public class ViewDashboard extends JFrame{
         icon = new ImageIcon(image);
         menuCariByTipe.setIcon(icon);
         menuCariByTipe.setContentAreaFilled(false);
-        menuCariByTipe.addActionListener(e -> actionMenu6());
+        menuCariByTipe.addActionListener(e -> actionCariByTipe());
 
         add(menuCariByTipe);
         add(ketMenuCariByTipe);
@@ -198,7 +198,7 @@ public class ViewDashboard extends JFrame{
         icon = new ImageIcon(image);
         menuCariByMerk.setIcon(icon);
         menuCariByMerk.setContentAreaFilled(false);
-        menuCariByMerk.addActionListener(e -> actionMenu7());
+        menuCariByMerk.addActionListener(e -> actionCariByMerk());
 
         add(menuCariByMerk);
         add(ketMenuCariByMerk);
@@ -225,31 +225,31 @@ public class ViewDashboard extends JFrame{
         add(ketMenuQuit);
     }
 
-    public void actionMenu1() {
+    public void actionTambah() {
         new ViewTambah();
         setVisible(false);
     }
-    public void actionMenu2() {
+    public void actionTampilkanData() {
         new ViewTampilSemuaData();
         setVisible(false);
     }
-    public void actionMenu3() {
+    public void actionUpdateInfo() {
         new ViewUpdateInfo();
         setVisible(false);
     }
-    public void actionMenu4() {
+    public void actionUpdateStok() {
         new ViewUpdateStok();
         setVisible(false);
     }
-    public void actionMenu5() {
+    public void actionHapus() {
         new ViewHapus();
         setVisible(false);
     }
-    public void actionMenu6() {
+    public void actionCariByTipe() {
         new ViewCariByTipe();
         setVisible(false);
     }
-    public void actionMenu7() {
+    public void actionCariByMerk() {
         new ViewCariByMerk();
         setVisible(false);
     }
