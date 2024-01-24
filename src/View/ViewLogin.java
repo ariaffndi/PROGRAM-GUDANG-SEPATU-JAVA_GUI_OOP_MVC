@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class ViewLogin extends JFrame{
     ControllerAdmin controllerAdmin = new ControllerAdmin();
@@ -32,6 +31,7 @@ public class ViewLogin extends JFrame{
         judul();
         username();
         signIn();
+        addAdmin();
     }
 
     private void judul() {
@@ -126,7 +126,6 @@ public class ViewLogin extends JFrame{
     }
 
     public void loginAction () {
-        addAdmin();
         try {
             String username = fieldUsername.getText();
             char[] passwordCharArray = fieldPassword.getPassword();
