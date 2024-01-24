@@ -5,15 +5,13 @@ import Entity.EntitySepatuSpesifik;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 public class ViewCariByMerk extends JFrame {
     ControllerSepatu controllerSepatu = new ControllerSepatu();
     JTextField fieldMerk;
     JLabel labelFoto, labelMerk, judul, subJudul;
-    JButton submit;
+    JButton submit, backToMenu;
     private JPanel panelData;
     private JScrollPane scrollPane;
 
@@ -26,13 +24,8 @@ public class ViewCariByMerk extends JFrame {
         elements();
         setVisible(true);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                backToMenu();
-            }
-        });
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
     private void elements() {
@@ -40,6 +33,7 @@ public class ViewCariByMerk extends JFrame {
         merk();
         submit();
         panelData();
+        buttonBackToMenu();
     }
 
     private void judul() {
@@ -125,6 +119,20 @@ public class ViewCariByMerk extends JFrame {
         scrollPane = new JScrollPane(panelData);
         scrollPane.setBounds(150, 250, 250, 250);
         add(scrollPane);
+    }
+
+    public void buttonBackToMenu() {
+        backToMenu = new JButton();
+        backToMenu.setBounds(20, 20, 30,30 );
+        ImageIcon icon = new ImageIcon("img/back.png");
+        Image image = icon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(image);
+        backToMenu.setIcon(icon);
+        backToMenu.setContentAreaFilled(false);
+        backToMenu.setBorderPainted(false);
+        backToMenu.addActionListener(e -> backToMenu());
+
+        add(backToMenu);
     }
 
     public void backToMenu(){

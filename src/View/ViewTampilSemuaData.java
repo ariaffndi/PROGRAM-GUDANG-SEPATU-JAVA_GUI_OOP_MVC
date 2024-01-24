@@ -5,8 +5,6 @@ import Entity.EntitySepatuSpesifik;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 public class ViewTampilSemuaData extends JFrame{
@@ -14,6 +12,7 @@ public class ViewTampilSemuaData extends JFrame{
     JLabel labelFoto, judul, subJudul;
     private JPanel panelData;
     private JScrollPane scrollPane;
+    private JButton backToMenu;
 
     Font font;
 
@@ -24,18 +23,13 @@ public class ViewTampilSemuaData extends JFrame{
         elements();
         setVisible(true);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                backToMenu();
-            }
-        });
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     private void elements() {
         judul();
         panelData();
+        buttonBackToMenu();
     }
 
     private void judul() {
@@ -83,6 +77,19 @@ public class ViewTampilSemuaData extends JFrame{
         add(scrollPane);
     }
 
+    public void buttonBackToMenu() {
+        backToMenu = new JButton();
+        backToMenu.setBounds(20, 20, 30,30 );
+        ImageIcon icon = new ImageIcon("img/back.png");
+        Image image = icon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(image);
+        backToMenu.setIcon(icon);
+        backToMenu.setContentAreaFilled(false);
+        backToMenu.setBorderPainted(false);
+        backToMenu.addActionListener(e -> backToMenu());
+
+        add(backToMenu);
+    }
     public void backToMenu(){
         dispose();
         new ViewDashboard();

@@ -4,14 +4,12 @@ import Controller.ControllerSepatu;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 public class ViewUpdateInfo extends JFrame{
     ControllerSepatu controllerSepatu = new ControllerSepatu();
     JTextField fieldTipe, fieldJenis, fieldWarna, fieldUkuran, fieldLokasi;
     JLabel labelFoto, labelTipe, judul, subJudul, labelJenis, labelWarna, labelUkuran, labelLokasi;
-    JButton submit;
+    JButton submit, backToMenu;
 
     Font font;
 
@@ -22,13 +20,7 @@ public class ViewUpdateInfo extends JFrame{
         elements();
         setVisible(true);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                backToMenu();
-            }
-        });
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     private void elements() {
@@ -39,6 +31,7 @@ public class ViewUpdateInfo extends JFrame{
         ukuran();
         lokasi();
         submit();
+        buttonBackToMenu();
     }
 
     private void judul() {
@@ -157,6 +150,20 @@ public class ViewUpdateInfo extends JFrame{
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Ukuran, dan Lokasi harus berupa angka!", "Informasi", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    public void buttonBackToMenu() {
+        backToMenu = new JButton();
+        backToMenu.setBounds(20, 20, 30,30 );
+        ImageIcon icon = new ImageIcon("img/back.png");
+        Image image = icon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+        icon = new ImageIcon(image);
+        backToMenu.setIcon(icon);
+        backToMenu.setContentAreaFilled(false);
+        backToMenu.setBorderPainted(false);
+        backToMenu.addActionListener(e -> backToMenu());
+
+        add(backToMenu);
     }
 
     public void backToMenu(){
