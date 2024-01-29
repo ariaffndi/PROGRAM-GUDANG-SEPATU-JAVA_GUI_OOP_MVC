@@ -13,10 +13,6 @@ public abstract class EntitySepatuGeneral {
     };
     public abstract String cetakInfo();
 
-    public String getJenis() {
-        return jenis;
-    }
-
     public String getMerk() {
         return merk;
     }

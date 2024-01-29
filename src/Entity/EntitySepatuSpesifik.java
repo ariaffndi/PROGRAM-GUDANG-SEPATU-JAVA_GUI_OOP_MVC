@@ -32,22 +32,6 @@ public class EntitySepatuSpesifik extends EntitySepatuGeneral {
         return type;
     }
 
-    public String getWarna() {
-        return warna;
-    }
-
-    public int getUkuran() {
-        return ukuran;
-    }
-
-    public int getStok() {
-        return stok;
-    }
-
-    public int getLokasi() {
-        return lokasi;
-    }
-
     public void setWarna(String warna) {
         this.warna = warna;
     }

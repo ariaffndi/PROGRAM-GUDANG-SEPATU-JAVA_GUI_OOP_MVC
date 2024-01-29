@@ -2,8 +2,6 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ViewDashboard extends JFrame{
 
@@ -219,7 +217,7 @@ public class ViewDashboard extends JFrame{
         icon = new ImageIcon(image);
         menuQuit.setIcon(icon);
         menuQuit.setContentAreaFilled(false);
-        menuQuit.addActionListener(e -> actionMenu8());
+        menuQuit.addActionListener(e -> actionClose());
 
         add(menuQuit);
         add(ketMenuQuit);
@@ -253,7 +251,7 @@ public class ViewDashboard extends JFrame{
         new ViewCariByMerk();
         setVisible(false);
     }
-    public void actionMenu8() {
+    public void actionClose() {
         JOptionPane.showMessageDialog(this,"Terimakasih!", "Informasi",JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
